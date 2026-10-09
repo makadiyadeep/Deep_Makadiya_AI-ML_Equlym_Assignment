@@ -1,0 +1,104 @@
+insight_id,type,indicator,entity,period,metric,change,severity,explanation
+insight-0001,trend,high_risk_cases,Ahmedabad,2025-02,12.0,-14.285714285714285,Low,High-risk cases in Ahmedabad decreased by 14.29% compared with the previous month (2025-02); current value: 12.
+insight-0002,trend,high_risk_cases,Ahmedabad,2025-04,16.0,33.33333333333333,High,High-risk cases in Ahmedabad increased by 33.33% compared with the previous month (2025-04); current value: 16.
+insight-0003,trend,high_risk_cases,Ahmedabad,2025-06,11.0,-26.666666666666668,Medium,High-risk cases in Ahmedabad decreased by 26.67% compared with the previous month (2025-06); current value: 11.
+insight-0004,trend,high_risk_cases,Ahmedabad,2025-07,13.0,18.181818181818183,Medium,High-risk cases in Ahmedabad increased by 18.18% compared with the previous month (2025-07); current value: 13.
+insight-0005,trend,high_risk_cases,Ahmedabad,2025-08,11.0,-15.384615384615385,Medium,High-risk cases in Ahmedabad decreased by 15.38% compared with the previous month (2025-08); current value: 11.
+insight-0006,trend,anc_coverage,Ahmedabad,2025-09,70.0,-18.6046511627907,Medium,ANC coverage in Ahmedabad decreased by 18.60% compared with the previous month (2025-09); current value: 70.
+insight-0007,trend,high_risk_cases,Ahmedabad,2025-09,14.0,27.27272727272727,Medium,High-risk cases in Ahmedabad increased by 27.27% compared with the previous month (2025-09); current value: 14.
+insight-0008,trend,anc_coverage,Ahmedabad,2025-10,79.0,12.857142857142856,Low,ANC coverage in Ahmedabad increased by 12.86% compared with the previous month (2025-10); current value: 79.
+insight-0009,trend,high_risk_cases,Ahmedabad,2025-10,12.0,-14.285714285714285,Low,High-risk cases in Ahmedabad decreased by 14.29% compared with the previous month (2025-10); current value: 12.
+insight-0010,trend,anc_coverage,Ahmedabad,2025-11,88.2,11.645569620253168,Low,ANC coverage in Ahmedabad increased by 11.65% compared with the previous month (2025-11); current value: 88.2.
+insight-0011,trend,immunization,Amreli,2025-10,65.0,-26.30385487528345,Medium,Immunization in Amreli decreased by 26.30% compared with the previous month (2025-10); current value: 65.
+insight-0012,trend,high_risk_cases,Amreli,2025-11,22.0,10.0,Low,High-risk cases in Amreli increased by 10.00% compared with the previous month (2025-11); current value: 22.
+insight-0013,trend,immunization,Amreli,2025-11,88.4,36.00000000000001,High,Immunization in Amreli increased by 36.00% compared with the previous month (2025-11); current value: 88.4.
+insight-0014,trend,high_risk_cases,Amreli,2025-12,19.0,-13.636363636363635,Low,High-risk cases in Amreli decreased by 13.64% compared with the previous month (2025-12); current value: 19.
+insight-0015,trend,high_risk_cases,Anand,2025-04,17.0,13.333333333333334,Low,High-risk cases in Anand increased by 13.33% compared with the previous month (2025-04); current value: 17.
+insight-0016,trend,high_risk_cases,Anand,2025-09,15.0,-11.76470588235294,Low,High-risk cases in Anand decreased by 11.76% compared with the previous month (2025-09); current value: 15.
+insight-0017,trend,high_risk_cases,Anand,2025-12,13.0,-13.333333333333334,Low,High-risk cases in Anand decreased by 13.33% compared with the previous month (2025-12); current value: 13.
+insight-0018,trend,high_risk_cases,Bharuch,2025-07,26.0,13.043478260869565,Low,High-risk cases in Bharuch increased by 13.04% compared with the previous month (2025-07); current value: 26.
+insight-0019,trend,institutional_delivery,Bharuch,2025-09,64.0,-18.158567774936063,Medium,Institutional delivery in Bharuch decreased by 18.16% compared with the previous month (2025-09); current value: 64.
+insight-0020,trend,institutional_delivery,Bharuch,2025-10,78.5,22.65625,Medium,Institutional delivery in Bharuch increased by 22.66% compared with the previous month (2025-10); current value: 78.5.
+insight-0021,trend,high_risk_cases,Bharuch,2025-11,26.0,13.043478260869565,Low,High-risk cases in Bharuch increased by 13.04% compared with the previous month (2025-11); current value: 26.
+insight-0022,trend,high_risk_cases,Bhavnagar,2025-02,18.0,-14.285714285714285,Low,High-risk cases in Bhavnagar decreased by 14.29% compared with the previous month (2025-02); current value: 18.
+insight-0023,trend,high_risk_cases,Bhavnagar,2025-03,23.0,27.77777777777778,Medium,High-risk cases in Bhavnagar increased by 27.78% compared with the previous month (2025-03); current value: 23.
+insight-0024,trend,high_risk_cases,Bhavnagar,2025-04,19.0,-17.391304347826086,Medium,High-risk cases in Bhavnagar decreased by 17.39% compared with the previous month (2025-04); current value: 19.
+insight-0025,trend,high_risk_cases,Bhavnagar,2025-06,21.0,16.666666666666664,Medium,High-risk cases in Bhavnagar increased by 16.67% compared with the previous month (2025-06); current value: 21.
+insight-0026,trend,high_risk_cases,Bhavnagar,2025-11,21.0,16.666666666666664,Medium,High-risk cases in Bhavnagar increased by 16.67% compared with the previous month (2025-11); current value: 21.
+insight-0027,trend,high_risk_cases,Bhavnagar,2025-12,18.0,-14.285714285714285,Low,High-risk cases in Bhavnagar decreased by 14.29% compared with the previous month (2025-12); current value: 18.
+insight-0028,trend,high_risk_cases,Gandhinagar,2025-02,21.0,10.526315789473683,Low,High-risk cases in Gandhinagar increased by 10.53% compared with the previous month (2025-02); current value: 21.
+insight-0029,trend,institutional_delivery,Gandhinagar,2025-04,89.0,12.658227848101266,Low,Institutional delivery in Gandhinagar increased by 12.66% compared with the previous month (2025-04); current value: 89.
+insight-0030,trend,high_risk_cases,Gandhinagar,2025-12,17.0,-10.526315789473683,Low,High-risk cases in Gandhinagar decreased by 10.53% compared with the previous month (2025-12); current value: 17.
+insight-0031,trend,high_risk_cases,Jamnagar,2025-03,11.0,-15.384615384615385,Medium,High-risk cases in Jamnagar decreased by 15.38% compared with the previous month (2025-03); current value: 11.
+insight-0032,trend,high_risk_cases,Jamnagar,2025-05,14.0,27.27272727272727,Medium,High-risk cases in Jamnagar increased by 27.27% compared with the previous month (2025-05); current value: 14.
+insight-0033,trend,high_risk_cases,Jamnagar,2025-06,12.0,-14.285714285714285,Low,High-risk cases in Jamnagar decreased by 14.29% compared with the previous month (2025-06); current value: 12.
+insight-0034,trend,high_risk_cases,Jamnagar,2025-09,9.0,-18.181818181818183,Medium,High-risk cases in Jamnagar decreased by 18.18% compared with the previous month (2025-09); current value: 9.
+insight-0035,trend,high_risk_cases,Jamnagar,2025-10,10.0,11.11111111111111,Low,High-risk cases in Jamnagar increased by 11.11% compared with the previous month (2025-10); current value: 10.
+insight-0036,trend,high_risk_cases,Jamnagar,2025-11,11.0,10.0,Low,High-risk cases in Jamnagar increased by 10.00% compared with the previous month (2025-11); current value: 11.
+insight-0037,trend,high_risk_cases,Junagadh,2025-02,20.0,17.647058823529413,Medium,High-risk cases in Junagadh increased by 17.65% compared with the previous month (2025-02); current value: 20.
+insight-0038,trend,high_risk_cases,Junagadh,2025-03,17.0,-15.0,Medium,High-risk cases in Junagadh decreased by 15.00% compared with the previous month (2025-03); current value: 17.
+insight-0039,trend,high_risk_cases,Junagadh,2025-04,21.0,23.52941176470588,Medium,High-risk cases in Junagadh increased by 23.53% compared with the previous month (2025-04); current value: 21.
+insight-0040,trend,high_risk_cases,Junagadh,2025-05,17.0,-19.047619047619047,Medium,High-risk cases in Junagadh decreased by 19.05% compared with the previous month (2025-05); current value: 17.
+insight-0041,trend,high_risk_cases,Junagadh,2025-06,20.0,17.647058823529413,Medium,High-risk cases in Junagadh increased by 17.65% compared with the previous month (2025-06); current value: 20.
+insight-0042,trend,high_risk_cases,Junagadh,2025-10,20.0,17.647058823529413,Medium,High-risk cases in Junagadh increased by 17.65% compared with the previous month (2025-10); current value: 20.
+insight-0043,trend,high_risk_cases,Junagadh,2025-11,18.0,-10.0,Low,High-risk cases in Junagadh decreased by 10.00% compared with the previous month (2025-11); current value: 18.
+insight-0044,trend,high_risk_cases,Kheda,2025-08,15.0,-16.666666666666664,Medium,High-risk cases in Kheda decreased by 16.67% compared with the previous month (2025-08); current value: 15.
+insight-0045,trend,high_risk_cases,Mehsana,2025-06,12.0,-36.84210526315789,High,High-risk cases in Mehsana decreased by 36.84% compared with the previous month (2025-06); current value: 12.
+insight-0046,trend,anc_coverage,Mehsana,2025-07,44.0,-46.98795180722892,High,ANC coverage in Mehsana decreased by 46.99% compared with the previous month (2025-07); current value: 44.
+insight-0047,trend,high_risk_cases,Mehsana,2025-07,35.0,191.66666666666669,High,High-risk cases in Mehsana increased by 191.67% compared with the previous month (2025-07); current value: 35.
+insight-0048,trend,anc_coverage,Mehsana,2025-08,80.0,81.81818181818183,High,ANC coverage in Mehsana increased by 81.82% compared with the previous month (2025-08); current value: 80.
+insight-0049,trend,high_risk_cases,Mehsana,2025-08,13.0,-62.857142857142854,High,High-risk cases in Mehsana decreased by 62.86% compared with the previous month (2025-08); current value: 13.
+insight-0050,trend,high_risk_cases,Mehsana,2025-09,23.0,76.92307692307693,High,High-risk cases in Mehsana increased by 76.92% compared with the previous month (2025-09); current value: 23.
+insight-0051,trend,high_risk_cases,Morbi,2025-02,15.0,-11.76470588235294,Low,High-risk cases in Morbi decreased by 11.76% compared with the previous month (2025-02); current value: 15.
+insight-0052,trend,high_risk_cases,Morbi,2025-07,14.0,-12.5,Low,High-risk cases in Morbi decreased by 12.50% compared with the previous month (2025-07); current value: 14.
+insight-0053,trend,high_risk_cases,Morbi,2025-08,18.0,28.57142857142857,Medium,High-risk cases in Morbi increased by 28.57% compared with the previous month (2025-08); current value: 18.
+insight-0054,trend,high_risk_cases,Morbi,2025-09,15.0,-16.666666666666664,Medium,High-risk cases in Morbi decreased by 16.67% compared with the previous month (2025-09); current value: 15.
+insight-0055,trend,high_risk_cases,Morbi,2025-10,13.0,-13.333333333333334,Low,High-risk cases in Morbi decreased by 13.33% compared with the previous month (2025-10); current value: 13.
+insight-0056,trend,high_risk_cases,Navsari,2025-05,17.0,-10.526315789473683,Low,High-risk cases in Navsari decreased by 10.53% compared with the previous month (2025-05); current value: 17.
+insight-0057,trend,high_risk_cases,Navsari,2025-10,20.0,11.11111111111111,Low,High-risk cases in Navsari increased by 11.11% compared with the previous month (2025-10); current value: 20.
+insight-0058,trend,high_risk_cases,Navsari,2025-11,17.0,-15.0,Medium,High-risk cases in Navsari decreased by 15.00% compared with the previous month (2025-11); current value: 17.
+insight-0059,trend,high_risk_cases,Panchmahal,2025-02,15.0,15.384615384615385,Medium,High-risk cases in Panchmahal increased by 15.38% compared with the previous month (2025-02); current value: 15.
+insight-0060,trend,anc_coverage,Panchmahal,2025-04,56.0,-32.93413173652694,High,ANC coverage in Panchmahal decreased by 32.93% compared with the previous month (2025-04); current value: 56.
+insight-0061,trend,anc_coverage,Panchmahal,2025-05,84.6,51.071428571428555,High,ANC coverage in Panchmahal increased by 51.07% compared with the previous month (2025-05); current value: 84.6.
+insight-0062,trend,high_risk_cases,Panchmahal,2025-09,16.0,14.285714285714285,Low,High-risk cases in Panchmahal increased by 14.29% compared with the previous month (2025-09); current value: 16.
+insight-0063,trend,high_risk_cases,Panchmahal,2025-12,14.0,-12.5,Low,High-risk cases in Panchmahal decreased by 12.50% compared with the previous month (2025-12); current value: 14.
+insight-0064,trend,high_risk_cases,Patan,2025-02,12.0,-14.285714285714285,Low,High-risk cases in Patan decreased by 14.29% compared with the previous month (2025-02); current value: 12.
+insight-0065,trend,high_risk_cases,Patan,2025-03,14.0,16.666666666666664,Medium,High-risk cases in Patan increased by 16.67% compared with the previous month (2025-03); current value: 14.
+insight-0066,trend,institutional_delivery,Patan,2025-06,64.0,-23.809523809523807,Medium,Institutional delivery in Patan decreased by 23.81% compared with the previous month (2025-06); current value: 64.
+insight-0067,trend,high_risk_cases,Patan,2025-07,15.0,15.384615384615385,Medium,High-risk cases in Patan increased by 15.38% compared with the previous month (2025-07); current value: 15.
+insight-0068,trend,institutional_delivery,Patan,2025-07,82.0,28.125,Medium,Institutional delivery in Patan increased by 28.12% compared with the previous month (2025-07); current value: 82.
+insight-0069,trend,high_risk_cases,Patan,2025-08,13.0,-13.333333333333334,Low,High-risk cases in Patan decreased by 13.33% compared with the previous month (2025-08); current value: 13.
+insight-0070,trend,institutional_delivery,Patan,2025-08,91.5,11.585365853658537,Low,Institutional delivery in Patan increased by 11.59% compared with the previous month (2025-08); current value: 91.5.
+insight-0071,trend,high_risk_cases,Patan,2025-10,10.0,-28.57142857142857,Medium,High-risk cases in Patan decreased by 28.57% compared with the previous month (2025-10); current value: 10.
+insight-0072,trend,high_risk_cases,Patan,2025-11,15.0,50.0,High,High-risk cases in Patan increased by 50.00% compared with the previous month (2025-11); current value: 15.
+insight-0073,trend,high_risk_cases,Porbandar,2025-02,21.0,10.526315789473683,Low,High-risk cases in Porbandar increased by 10.53% compared with the previous month (2025-02); current value: 21.
+insight-0074,trend,high_risk_cases,Porbandar,2025-06,22.0,22.22222222222222,Medium,High-risk cases in Porbandar increased by 22.22% compared with the previous month (2025-06); current value: 22.
+insight-0075,trend,high_risk_cases,Rajkot,2025-03,15.0,15.384615384615385,Medium,High-risk cases in Rajkot increased by 15.38% compared with the previous month (2025-03); current value: 15.
+insight-0076,trend,high_risk_cases,Rajkot,2025-12,10.0,-33.33333333333333,High,High-risk cases in Rajkot decreased by 33.33% compared with the previous month (2025-12); current value: 10.
+insight-0077,trend,high_risk_cases,Sabarkantha,2025-04,23.0,15.0,Medium,High-risk cases in Sabarkantha increased by 15.00% compared with the previous month (2025-04); current value: 23.
+insight-0078,trend,high_risk_cases,Sabarkantha,2025-10,22.0,10.0,Low,High-risk cases in Sabarkantha increased by 10.00% compared with the previous month (2025-10); current value: 22.
+insight-0079,trend,immunization,Surat,2025-04,89.0,14.102564102564102,Low,Immunization in Surat increased by 14.10% compared with the previous month (2025-04); current value: 89.
+insight-0080,trend,immunization,Surat,2025-05,79.0,-11.235955056179774,Low,Immunization in Surat decreased by 11.24% compared with the previous month (2025-05); current value: 79.
+insight-0081,trend,high_risk_cases,Surat,2025-08,24.0,14.285714285714285,Low,High-risk cases in Surat increased by 14.29% compared with the previous month (2025-08); current value: 24.
+insight-0082,trend,high_risk_cases,Surat,2025-11,21.0,-12.5,Low,High-risk cases in Surat decreased by 12.50% compared with the previous month (2025-11); current value: 21.
+insight-0083,trend,high_risk_cases,Surat,2025-12,26.0,23.809523809523807,Medium,High-risk cases in Surat increased by 23.81% compared with the previous month (2025-12); current value: 26.
+insight-0084,trend,high_risk_cases,Vadodara,2025-02,13.0,-13.333333333333334,Low,High-risk cases in Vadodara decreased by 13.33% compared with the previous month (2025-02); current value: 13.
+insight-0085,trend,anc_coverage,Vadodara,2025-03,87.0,14.473684210526317,Low,ANC coverage in Vadodara increased by 14.47% compared with the previous month (2025-03); current value: 87.
+insight-0086,trend,high_risk_cases,Vadodara,2025-04,15.0,15.384615384615385,Medium,High-risk cases in Vadodara increased by 15.38% compared with the previous month (2025-04); current value: 15.
+insight-0087,trend,high_risk_cases,Vadodara,2025-07,17.0,13.333333333333334,Low,High-risk cases in Vadodara increased by 13.33% compared with the previous month (2025-07); current value: 17.
+insight-0088,trend,high_risk_cases,Vadodara,2025-08,14.0,-17.647058823529413,Medium,High-risk cases in Vadodara decreased by 17.65% compared with the previous month (2025-08); current value: 14.
+insight-0089,trend,high_risk_cases,Vadodara,2025-12,18.0,28.57142857142857,Medium,High-risk cases in Vadodara increased by 28.57% compared with the previous month (2025-12); current value: 18.
+insight-0090,trend,high_risk_cases,Valsad,2025-02,19.0,-13.636363636363635,Low,High-risk cases in Valsad decreased by 13.64% compared with the previous month (2025-02); current value: 19.
+insight-0091,trend,high_risk_cases,Valsad,2025-03,22.0,15.789473684210526,Medium,High-risk cases in Valsad increased by 15.79% compared with the previous month (2025-03); current value: 22.
+insight-0092,trend,high_risk_cases,Valsad,2025-06,19.0,-13.636363636363635,Low,High-risk cases in Valsad decreased by 13.64% compared with the previous month (2025-06); current value: 19.
+insight-0093,trend,high_risk_cases,Valsad,2025-08,22.0,15.789473684210526,Medium,High-risk cases in Valsad increased by 15.79% compared with the previous month (2025-08); current value: 22.
+insight-0094,outlier,immunization,Amreli,2025-10,65.0,,High,"Immunization in Amreli was flagged as a low outlier relative to the observed distribution (2025-10; value 65, IQR bound 78.81; 13.81 percentage points beyond the bound). A statistical outlier is not by itself a clinical emergency."
+insight-0095,outlier,institutional_delivery,Bharuch,2025-09,64.0,,Medium,"Institutional delivery in Bharuch was flagged as a low outlier relative to the observed distribution (2025-09; value 64, IQR bound 70.05; 6.05 percentage points beyond the bound). A statistical outlier is not by itself a clinical emergency."
+insight-0096,outlier,anc_coverage,Mehsana,2025-07,44.0,,High,"ANC coverage in Mehsana was flagged as a low outlier relative to the observed distribution (2025-07; value 44, IQR bound 61.30; 17.30 percentage points beyond the bound). A statistical outlier is not by itself a clinical emergency."
+insight-0097,outlier,high_risk_cases,Mehsana,2025-07,35.0,,Medium,"High-risk cases in Mehsana was flagged as a high outlier relative to the observed distribution (2025-07; value 35, IQR bound 30.38; 4.62 cases beyond the bound). A statistical outlier is not by itself a clinical emergency."
+insight-0098,outlier,anc_coverage,Panchmahal,2025-04,56.0,,Medium,"ANC coverage in Panchmahal was flagged as a low outlier relative to the observed distribution (2025-04; value 56, IQR bound 61.30; 5.30 percentage points beyond the bound). A statistical outlier is not by itself a clinical emergency."
+insight-0099,outlier,institutional_delivery,Patan,2025-06,64.0,,Medium,"Institutional delivery in Patan was flagged as a low outlier relative to the observed distribution (2025-06; value 64, IQR bound 70.05; 6.05 percentage points beyond the bound). A statistical outlier is not by itself a clinical emergency."
+insight-0100,outlier,immunization,Surat,2025-03,78.0,,Low,"Immunization in Surat was flagged as a low outlier relative to the observed distribution (2025-03; value 78, IQR bound 78.81; 0.81 percentage points beyond the bound). A statistical outlier is not by itself a clinical emergency."
+insight-0101,correlation,"anc_coverage, high_risk_cases",anc_coverage & high_risk_cases,,-0.8478402726289578,,Low,"ANC coverage and High-risk cases showed a strong negative linear association (Pearson r = -0.848) in the observed dataset of 240 rows. Correlation indicates association, not causation; these results use synthetic data."
+insight-0102,correlation,"anc_coverage, institutional_delivery",anc_coverage & institutional_delivery,,0.7313013778344767,,Low,"ANC coverage and Institutional delivery showed a strong positive linear association (Pearson r = 0.731) in the observed dataset of 240 rows. Correlation indicates association, not causation; these results use synthetic data."
+insight-0103,correlation,"institutional_delivery, high_risk_cases",institutional_delivery & high_risk_cases,,-0.7651568114350714,,Low,"Institutional delivery and High-risk cases showed a strong negative linear association (Pearson r = -0.765) in the observed dataset of 240 rows. Correlation indicates association, not causation; these results use synthetic data."
