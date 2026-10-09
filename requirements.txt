@@ -8,3 +8,4 @@ ipykernel
 scipy
 plotly
 pytest
+matplotlib
