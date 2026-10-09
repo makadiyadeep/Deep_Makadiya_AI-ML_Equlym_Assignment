@@ -25,27 +25,43 @@ DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parents[1] / "outputs"
 def save_heatmap(
     correlation_matrix: pd.DataFrame,
     output_path: str | Path,
+    indicators: tuple[str, ...] | list[str] | None = None,
 ) -> Path:
-    """Save a labeled heatmap, displaying undefined coefficients as N/A."""
+    """Save a labeled heatmap, displaying undefined coefficients as N/A.
+
+    ``indicators`` selects a display subset only; callers should calculate the
+    matrix using the intended statistical population before requesting a view.
+    """
     path = Path(output_path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    matrix = correlation_matrix.reindex(index=INDICATORS, columns=INDICATORS)
+    displayed_indicators = list(indicators or INDICATORS)
+    unknown_indicators = [
+        indicator for indicator in displayed_indicators if indicator not in INDICATORS
+    ]
+    if unknown_indicators:
+        raise ValueError(f"Unknown indicators requested for heatmap: {unknown_indicators}")
+    matrix = correlation_matrix.reindex(
+        index=displayed_indicators,
+        columns=displayed_indicators,
+    )
     values = matrix.to_numpy(dtype=float)
     masked_values = np.ma.masked_invalid(values)
     colormap = plt.get_cmap("coolwarm").copy()
     colormap.set_bad(color="#d9d9d9")
 
-    figure, axis = plt.subplots(figsize=(9, 7))
+    figure, axis = plt.subplots(
+        figsize=(max(6, 2.1 * len(displayed_indicators)), max(5, 1.8 * len(displayed_indicators)))
+    )
     image = axis.imshow(masked_values, cmap=colormap, vmin=-1, vmax=1)
-    labels = [INDICATOR_LABELS[indicator] for indicator in INDICATORS]
-    axis.set_xticks(np.arange(len(INDICATORS)), labels, rotation=35, ha="right")
-    axis.set_yticks(np.arange(len(INDICATORS)), labels)
+    labels = [INDICATOR_LABELS[indicator] for indicator in displayed_indicators]
+    axis.set_xticks(np.arange(len(displayed_indicators)), labels, rotation=35, ha="right")
+    axis.set_yticks(np.arange(len(displayed_indicators)), labels)
     axis.set_xlabel("Indicator")
     axis.set_ylabel("Indicator")
     axis.set_title("Pearson Correlation Heatmap: Healthcare Indicators")
 
-    for row in range(len(INDICATORS)):
-        for column in range(len(INDICATORS)):
+    for row in range(len(displayed_indicators)):
+        for column in range(len(displayed_indicators)):
             value = values[row, column]
             annotation = "N/A" if not np.isfinite(value) else f"{value:.2f}"
             text_color = "white" if np.isfinite(value) and abs(value) >= 0.55 else "black"
