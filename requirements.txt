@@ -1,0 +1,10 @@
+scikit-learn
+numpy
+pandas
+seaborn
+flask   
+streamlit
+ipykernel
+scipy
+plotly
+pytest
