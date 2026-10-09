@@ -1,4 +1,6 @@
 
+from pathlib import Path
+
 import pandas as pd
 
 REQUIRED_COLUMNS = [
@@ -17,109 +19,128 @@ PERCENTAGE_COLUMNS = [
 ]
 
 NUMERIC_COLUMNS = PERCENTAGE_COLUMNS + ["high_risk_cases"]
+DEFAULT_DATA_PATH = Path(__file__).resolve().parents[1] / "data" / "healthcare.csv"
 
 
-def validate_dataset(file_path: str) -> pd.DataFrame:
-    """Load and validate the healthcare CSV dataset."""
+def _print_report(checks: list[tuple[str, bool | None, str]]) -> None:
+    print("\n--- Dataset Validation Report ---")
+    for name, passed, details in checks:
+        status = "SKIP" if passed is None else "PASS" if bool(passed) else "FAIL"
+        print(f"[{status}] {name}: {details}")
 
-    # 1. Load the dataset
-    df = pd.read_csv(file_path)
+    failures = [name for name, passed, _ in checks if passed is not None and not bool(passed)]
+    print(f"\nOverall: {'FAILED' if failures else 'PASSED'}")
+    if failures:
+        raise ValueError("Validation failed: " + "; ".join(failures))
 
-    print("\n--- Dataset Validation ---")
 
-    # 2. Check required columns
-    missing_columns = set(REQUIRED_COLUMNS) - set(df.columns)
+def validate_dataset(file_path: str | Path = DEFAULT_DATA_PATH) -> pd.DataFrame:
+    """Load, convert, and validate the healthcare CSV without changing it."""
+    try:
+        df = pd.read_csv(file_path)
+    except (OSError, pd.errors.ParserError, pd.errors.EmptyDataError) as error:
+        print(f"[FAIL] Load dataset: {error}")
+        raise ValueError(f"Could not load dataset at {file_path}") from error
+
+    checks: list[tuple[str, bool | None, str]] = [
+        ("Load dataset", True, f"Loaded {len(df)} rows from {file_path}")
+    ]
+    missing_columns = sorted(set(REQUIRED_COLUMNS) - set(df.columns))
+    checks.append((
+        "Required columns",
+        not missing_columns,
+        "All required columns are present"
+        if not missing_columns
+        else f"Missing columns: {missing_columns}",
+    ))
 
     if missing_columns:
-        raise ValueError(
-            f"Missing required columns: {sorted(missing_columns)}"
-        )
+        for name in (
+            "Missing values",
+            "Duplicate district-month records",
+            "Month datetime conversion",
+            "Numeric conversion",
+            "Coverage ranges",
+            "High-risk case values",
+        ):
+            checks.append((name, None, "Skipped because required columns are missing"))
+        _print_report(checks)
 
-    # 3. Keep only the required columns
-    df = df[REQUIRED_COLUMNS].copy()
+    missing_count = int(df.isna().sum().sum())
+    checks.append((
+        "Missing values",
+        missing_count == 0,
+        "No missing values found" if missing_count == 0 else f"Found {missing_count} missing values",
+    ))
 
-    # 4. Validate and parse months
-    df["month"] = pd.to_datetime(
-        df["month"], errors="coerce"
-    )
+    parsed_months = pd.to_datetime(df["month"], errors="coerce")
+    invalid_month_count = int((df["month"].notna() & parsed_months.isna()).sum())
+    checks.append((
+        "Month datetime conversion",
+        invalid_month_count == 0 and parsed_months.notna().all(),
+        "All month values converted to datetime"
+        if invalid_month_count == 0 and parsed_months.notna().all()
+        else f"Found {invalid_month_count} invalid month values",
+    ))
+    df["month"] = parsed_months
 
-    if df["month"].isna().any():
-        raise ValueError("Invalid or missing month values found.")
+    duplicate_count = int(df.duplicated(subset=["district", "month"]).sum())
+    checks.append((
+        "Duplicate district-month records",
+        duplicate_count == 0,
+        "No duplicate district-month records found"
+        if duplicate_count == 0
+        else f"Found {duplicate_count} duplicate records",
+    ))
 
-    # 5. Check missing values
-    if df.isna().any().any():
-        raise ValueError("Missing values found in the dataset.")
-
-    # 6. Validate district names
-    if df["district"].dtype != object:
-        raise ValueError("District names must be text.")
-
-    df["district"] = df["district"].str.strip()
-
-    if df["district"].eq("").any():
-        raise ValueError("Empty district names found.")
-
-    # 7. Convert numeric columns safely
+    invalid_numeric_counts: dict[str, int] = {}
     for column in NUMERIC_COLUMNS:
-        df[column] = pd.to_numeric(
-            df[column], errors="coerce"
-        )
+        original = df[column]
+        converted = pd.to_numeric(original, errors="coerce")
+        invalid_numeric_counts[column] = int((original.notna() & converted.isna()).sum())
+        df[column] = converted
+    invalid_numeric_total = sum(invalid_numeric_counts.values())
+    checks.append((
+        "Numeric conversion",
+        invalid_numeric_total == 0,
+        "All four healthcare indicators converted to numeric"
+        if invalid_numeric_total == 0
+        else f"Invalid numeric values by column: {invalid_numeric_counts}",
+    ))
 
-    if df[NUMERIC_COLUMNS].isna().any().any():
-        raise ValueError(
-            "Invalid or missing numeric values found."
-        )
+    out_of_range = {
+        column: int((df[column].notna() & ~df[column].between(0, 100)).sum())
+        for column in PERCENTAGE_COLUMNS
+    }
+    out_of_range_total = sum(out_of_range.values())
+    checks.append((
+        "Coverage ranges (0-100)",
+        out_of_range_total == 0,
+        "All coverage values are between 0 and 100"
+        if out_of_range_total == 0
+        else f"Out-of-range values by column: {out_of_range}",
+    ))
 
-    # 8. Validate percentage ranges
-    for column in PERCENTAGE_COLUMNS:
-        invalid = ~df[column].between(0, 100)
-
-        if invalid.any():
-            raise ValueError(
-                f"{column} contains values outside 0-100."
-            )
-
-    # 9. Validate high-risk cases
-    if (df["high_risk_cases"] < 0).any():
-        raise ValueError("High-risk cases cannot be negative.")
-
-    if (df["high_risk_cases"] % 1 != 0).any():
-        raise ValueError("High-risk cases must be integers.")
-
-    df["high_risk_cases"] = df["high_risk_cases"].astype(int)
-
-    # 10. Check duplicate district-month records
-    duplicates = df.duplicated(
-        subset=["district", "month"]
+    high_risk = df["high_risk_cases"]
+    invalid_high_risk = high_risk.notna() & (
+        (high_risk < 0) | (high_risk % 1 != 0)
     )
+    invalid_high_risk_count = int(invalid_high_risk.sum())
+    checks.append((
+        "High-risk cases (non-negative integers)",
+        invalid_high_risk_count == 0,
+        "All high-risk counts are non-negative integers"
+        if invalid_high_risk_count == 0
+        else f"Found {invalid_high_risk_count} negative or fractional values",
+    ))
 
-    if duplicates.any():
-        raise ValueError(
-            f"Found {duplicates.sum()} duplicate district-month records."
-        )
-
-    # 11. Sort the dataset
-    df = df.sort_values(
-        ["district", "month"]
-    ).reset_index(drop=True)
-
-    # 12. Print validation report
-    print("Validation passed!")
-    print(f"Total rows: {len(df)}")
-    print(f"Total columns: {len(df.columns)}")
-    print(f"Districts: {df['district'].nunique()}")
-    print(f"Months: {df['month'].nunique()}")
-    print(f"Missing values: {df.isna().sum().sum()}")
-    print(f"Duplicate records: {df.duplicated(['district', 'month']).sum()}")
-
-    print("\n--- Numerical Summary ---")
-    print(df[NUMERIC_COLUMNS].describe())
-
-    print("\n--- First 5 Rows ---")
-    print(df.head())
-
+    _print_report(checks)
+    df["high_risk_cases"] = df["high_risk_cases"].astype(int)
     return df
 
 
 if __name__ == "__main__":
-    validate_dataset("data/healthcare.csv")
+    try:
+        validate_dataset()
+    except ValueError as error:
+        raise SystemExit(str(error)) from error
